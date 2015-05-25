@@ -65,7 +65,7 @@ class SendThread implements Runnable {
 
 					if (msgtoServerString.equals("EXIT"))
 						break;
-				}// end while
+				}
 				sock.close();
 			}
 		} catch (Exception e) {

@@ -8,7 +8,7 @@ import java.net.Socket;
 import java.util.List;
 
 import model.DataSocketManage;
-import model.Interpreter;
+import controller.Interpreter;
 import model.User;
 import repository.UsersRegistry;
 
@@ -89,7 +89,7 @@ class RecieveFromClientThread implements Runnable {
 				
 			} catch (IOException e) {
 				e.printStackTrace();
-			}// get outputstream
+			}
 			break;
 
 		case "disconnect":
@@ -154,9 +154,9 @@ class SendToClientThread implements Runnable {
 				pwPrintWriter.println(msgToClientString);// send message to
 															// client with
 															// PrintWriter
-				pwPrintWriter.flush();// flush the PrintWriter
+				pwPrintWriter.flush();
 
-			}// end while
+			}
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
 		}

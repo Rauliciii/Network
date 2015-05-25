@@ -1,4 +1,4 @@
-package model;
+package controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,13 +10,11 @@ public class Interpreter {
 	private static List<String> list;
 
 	public static List<String> interpretString(String string) {
-		// returns a list
 		System.out.println("S: Interpreting the command");
 		list = new ArrayList<String>();
 		// first pos in the list: type of connection
-		// second and third, parameters
+		// second and third: parameters
 		if (string.indexOf('_') == -1) {
-			// if simple command (bye or list)
 			list.add(string);
 		} else {
 			StringTokenizer tokenizer = new StringTokenizer(string);

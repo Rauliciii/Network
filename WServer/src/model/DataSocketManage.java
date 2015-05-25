@@ -6,7 +6,6 @@ import java.util.Map;
 
 
 public class DataSocketManage {
-	//here are all the sockets
 	private static Map<String, Socket> map = new HashMap<String, Socket>();
 
 	public static Socket getSocketFromString(String s) {

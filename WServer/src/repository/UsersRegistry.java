@@ -31,10 +31,8 @@ public class UsersRegistry {
 		try {
 			return getUsersFromStream((new FileInputStream(fileName)));
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return users;
@@ -52,7 +50,6 @@ public class UsersRegistry {
 				new FileWriter(fileName, true)))) {
 			out.println(u.getNickName() + "");
 		} catch (IOException e) {
-			// exception handling left as an exercise for the reader
 		}
 		return true;
 	}
@@ -80,7 +77,6 @@ public class UsersRegistry {
 			f.format("");
 			f.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
