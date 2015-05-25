@@ -88,7 +88,6 @@ class RecieveFromClientThread implements Runnable {
 				messgBTClient += "SUCCESS SEND";
 				
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}// get outputstream
 			break;
@@ -112,15 +111,19 @@ class RecieveFromClientThread implements Runnable {
 			while (true) {
 
 				while ((messageString = brBufferedReader.readLine()) != null) {
+					
 					String returnMessage = this.handleClient(messageString);
 					PrintWriter printWriter = new PrintWriter(new OutputStreamWriter(
 							this.clientSocket.getOutputStream()));// get outputstream
-				
+					
+					if (returnMessage.equals("EXIT")) {
+						break;
+					}
 					printWriter.println(returnMessage);
 					printWriter.flush();
 				}
 				this.clientSocket.close();
-				System.exit(0);
+				//System.exit(0);
 			}
 
 		} catch (Exception ex) {
